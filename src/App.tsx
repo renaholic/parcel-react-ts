@@ -1,3 +1,7 @@
 export function App() {
-  return <h1>Hello world!</h1>;
+  return (
+    <main className="container">
+      <h1>Hello, world!</h1>
+    </main>
+  );
 }
