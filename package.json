@@ -2,9 +2,10 @@
   "name": "parcel-react-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "yarn parcel src/index.html --open",
     "prettier:write": "yarn prettier . --write",
     "prettier:check": "npx prettier . --check",
     "prepare": "husky install"
