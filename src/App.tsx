@@ -6,6 +6,7 @@ interface BearState {
   bears: number;
   increase: (by: number) => void;
   decrease: (by: number) => void;
+  reset: () => void;
 }
 
 const useBearStore = create<BearState>()(
@@ -14,7 +15,12 @@ const useBearStore = create<BearState>()(
       (set) => ({
         bears: 0,
         increase: (by) => set((state) => ({ bears: state.bears + by })),
-        decrease: (by) => set((state) => ({ bears: state.bears - by })),
+        decrease: (by) =>
+          set((state) => ({ bears: Math.max(state.bears - by, 0) })),
+        reset: () =>
+          set(() => ({
+            bears: 0,
+          })),
       }),
       {
         name: 'bear-storage',
@@ -23,45 +29,50 @@ const useBearStore = create<BearState>()(
   ),
 );
 
+const Header = () => (
+  <nav className="container-fluid">
+    <ul>
+      <li>
+        <strong>Brand</strong>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="#">Link</a>
+      </li>
+      <li>
+        <a href="#">Link</a>
+      </li>
+      <li>
+        <a href="#" role="button">
+          Button
+        </a>
+      </li>
+    </ul>
+  </nav>
+);
+
 export function App() {
-  const bears = useBearStore((state) => state.bears);
-  const increase = useBearStore((state) => state.increase);
-  const decrease = useBearStore((state) => state.decrease);
+  const { bears, increase, decrease, reset } = useBearStore();
 
   return (
     <>
-      <header className="container-fluid">
-        <nav>
-          <ul>
-            <li>
-              <strong>Brand</strong>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <a href="#">Link</a>
-            </li>
-            <li>
-              <a href="#">Link</a>
-            </li>
-            <li>
-              <a href="#" role="button">
-                Button
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
       <main className="container">
-        <div className="grid">
-          <div>
-            <button onClick={() => increase(1)}>make bear</button>
-          </div>
-          <button onClick={() => decrease(1)}>kill bear</button>
+        <details>
+          <summary role="button" className="secondary">
+            Zustand Playground
+          </summary>
           <p>you have {bears} bears</p>
-        </div>
+          <div className="grid">
+            <button onClick={() => increase(1)}>make bear</button>
+            <button onClick={() => decrease(1)}>kill bear</button>
+            <button onClick={() => reset()} className="secondary">
+              Reset
+            </button>
+          </div>
+        </details>
       </main>
-      <footer className="container-fluid"></footer>
     </>
   );
 }
