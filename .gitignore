@@ -13,6 +13,7 @@
 /dist
 /.cache
 /.parcel-cache
+/parcel-bundle-reports
 
 # misc
 .DS_Store
