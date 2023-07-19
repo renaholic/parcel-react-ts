@@ -4,10 +4,9 @@
   "description": "",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "src/index.html",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
-    "start": "yarn parcel",
+    "start": "yarn parcel --https",
+    "build": "yarn parcel build",
     "prettier:write": "yarn prettier . --write",
     "prettier:check": "npx prettier . --check",
     "prepare": "husky install",
