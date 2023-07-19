@@ -5,13 +5,12 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "src/index.html",
   "scripts": {
-    "start": "yarn parcel --https",
+    "start": "yarn parcel",
     "build": "yarn parcel build",
-    "prettier:write": "yarn prettier . --write",
-    "prettier:check": "npx prettier . --check",
+    "prettier": "yarn prettier . --write",
     "prepare": "husky install",
     "test": "jest",
-    "lint": "eslint",
+    "lint": "npx prettier . --check",
     "check": "tsc --noEmit",
     "ci": "yarn build && yarn test && yarn lint && yarn check"
   },

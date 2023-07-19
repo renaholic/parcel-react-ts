@@ -5,7 +5,7 @@
       "@parcel/transformer-typescript-tsc"
     ]
   },
-  "reporters": [
+  "reporters": ["...",
     "@parcel/reporter-bundle-analyzer"
   ]
 }
