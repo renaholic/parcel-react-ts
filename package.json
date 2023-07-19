@@ -2,13 +2,19 @@
   "name": "parcel-react-ts",
   "version": "1.0.0",
   "description": "",
-  "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
+  "source": "src/index.html",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "start": "yarn parcel src/index.html",
+    "start": "yarn parcel",
     "prettier:write": "yarn prettier . --write",
     "prettier:check": "npx prettier . --check",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest",
+    "lint": "eslint",
+    "check": "tsc --noEmit",
+    "ci": "yarn build && yarn test && yarn lint && yarn check"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -19,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.0",
     "@babel/plugin-transform-flow-strip-types": "^7.0.0",
+    "@parcel/transformer-typescript-tsc": "^2.9.3",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.14",
@@ -29,7 +36,8 @@
     "postcss": "^8.4.26",
     "prettier": "3.0.0",
     "process": "^0.11.10",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.3",
+    "typescript": ">=3.0.0"
   },
   "dependencies": {
     "react": "^18.2.0",
