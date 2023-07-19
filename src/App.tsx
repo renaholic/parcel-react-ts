@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
+// https://docs.pmnd.rs/zustand/guides/updating-state
 interface BearState {
   bears: number;
   increase: (by: number) => void;
