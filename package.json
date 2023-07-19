@@ -17,9 +17,19 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.12.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "flow-bin": "^0.212.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "parcel": "^2.9.3",
-    "prettier": "3.0.0"
+    "prettier": "3.0.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
