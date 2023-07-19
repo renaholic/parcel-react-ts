@@ -1021,6 +1021,11 @@
     "@parcel/utils" "2.9.3"
     nullthrows "^1.1.1"
 
+"@picocss/pico@^1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@picocss/pico/-/pico-1.5.10.tgz#94f813f5de6206d5a4492b801337eadf6dfcc889"
+  integrity sha512-+LafMsrwPxXQMk6sI///TmSInCwwZmq+K7SikyL3N/4GhhwzyPC+TQLUEqmrLyjluR+uIpFFcqjty30Rtr6GxQ==
+
 "@swc/core-darwin-arm64@1.3.70":
   version "1.3.70"
   resolved "https://registry.yarnpkg.com/@swc/core-darwin-arm64/-/core-darwin-arm64-1.3.70.tgz#056ac6899e22cb7f7be21388d4d938ca5123a72b"
